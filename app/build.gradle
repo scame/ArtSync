@@ -22,11 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "com.android.support:appcompat-v7:$appcompat"
     implementation "com.android.support.constraint:constraint-layout:$constraintLayout"
     testImplementation "junit:junit:$jUnit"
@@ -48,7 +53,7 @@ dependencies {
     implementation "android.arch.work:work-rxjava2:$workManager"
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:$viewModel"
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$viewModel"
+    kapt "androidx.lifecycle:lifecycle-compiler:$viewModel"
 
     implementation "com.squareup.moshi:moshi-kotlin:$moshi"
 
